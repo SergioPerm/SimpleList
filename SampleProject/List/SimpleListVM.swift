@@ -35,6 +35,10 @@ private extension SimpleListVM {
 		items.append(.init(title: "Item 16"))
 		items.append(.init(title: "Item 17"))
 		items.append(.init(title: "Item 18"))
+		items.append(.init(title: "Item 19"))
+		items.append(.init(title: "Item 20"))
+		items.append(.init(title: "Item 21"))
+		items.append(.init(title: "Item 22"))
 
 		items.forEach { $0.output = self }
 	}

@@ -15,6 +15,7 @@
 		B1809C5F298F516200169178 /* SimpleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1809C5E298F516200169178 /* SimpleList.swift */; };
 		B1809C61298F51E200169178 /* SimpleListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1809C60298F51E200169178 /* SimpleListVM.swift */; };
 		B1809C63298F5E0800169178 /* SimpleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1809C62298F5E0800169178 /* SimpleItem.swift */; };
+		B1809C81298F71AC00169178 /* SimpleItemStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1809C80298F71AC00169178 /* SimpleItemStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B1809C5E298F516200169178 /* SimpleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleList.swift; sourceTree = "<group>"; };
 		B1809C60298F51E200169178 /* SimpleListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleListVM.swift; sourceTree = "<group>"; };
 		B1809C62298F5E0800169178 /* SimpleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleItem.swift; sourceTree = "<group>"; };
+		B1809C80298F71AC00169178 /* SimpleItemStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleItemStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				B1809C5C298F503E00169178 /* Item.swift */,
 				B1809C62298F5E0800169178 /* SimpleItem.swift */,
+				B1809C80298F71AC00169178 /* SimpleItemStyle.swift */,
 			);
 			path = Rows;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1809C63298F5E0800169178 /* SimpleItem.swift in Sources */,
+				B1809C81298F71AC00169178 /* SimpleItemStyle.swift in Sources */,
 				B1809C51298F502700169178 /* ContentView.swift in Sources */,
 				B1809C5F298F516200169178 /* SimpleList.swift in Sources */,
 				B1809C5D298F503E00169178 /* Item.swift in Sources */,
@@ -299,7 +303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SampleProject/Preview Content\"";
-				DEVELOPMENT_TEAM = DUBTL9M98H;
+				DEVELOPMENT_TEAM = V8K2MJ3UD5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -328,7 +332,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SampleProject/Preview Content\"";
-				DEVELOPMENT_TEAM = DUBTL9M98H;
+				DEVELOPMENT_TEAM = V8K2MJ3UD5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -14,8 +14,6 @@ struct SimpleItem: View {
 	@State private var dragOffset: CGFloat = .zero
 	@Binding var swipedItemId: String
 
-	private let dragPadding: CGFloat = 50
-
 	var body: some View {
 		HStack(alignment: .center, spacing: 0) {
 			Text(item.title)
@@ -23,17 +21,9 @@ struct SimpleItem: View {
 			Spacer()
 			deleteButton
 		}
-		.frame(height: 44)
-		.background(
-			RoundedRectangle(cornerRadius: 12)
-				.stroke(lineWidth: 3).foregroundColor(.blue)
-				.padding(.trailing, dragPadding)
-		).padding(3)
-		.contentShape(Rectangle())
-		.transition(.move(edge: .leading))
-		.padding(.trailing, -dragPadding)
+		.modifier(Style.Item())
 		.offset(x: dragOffset)
-		.highPriorityGesture(
+		.gesture(
 			swipeGesture
 		)
 		.onChange(of: swipedItemId, perform: { swipedId in
@@ -47,12 +37,11 @@ struct SimpleItem: View {
 			.onChanged {
 				guard abs($0.translation.width) > 20 else { return }
 
-				let dragPadding = dragPadding
-				let swipeRange: ClosedRange<CGFloat> = -(dragPadding)...0
-				guard swipeRange.contains(dragOffset) else { return }
+				let swipeRange: ClosedRange<CGFloat> = -(Style.dragPadding)...0
+				guard swipeRange.contains(-Style.dragPadding) else { return }
 				var newOffset: CGFloat = $0.translation.width
-				if newOffset < -dragPadding {
-					newOffset = -dragPadding
+				if newOffset < -Style.dragPadding {
+					newOffset = -Style.dragPadding
 				} else if newOffset > 0 && dragOffset >= 0 {
 					newOffset = 0
 				}
@@ -65,7 +54,7 @@ struct SimpleItem: View {
 				animateSwipe(newOffset)
 			}
 			.onEnded { _ in
-				let dragPadding = -dragPadding
+				let dragPadding = -Style.dragPadding
 				let openRange: ClosedRange<CGFloat> = dragPadding...(dragPadding / 2)
 				if openRange.contains(dragOffset) {
 					animateSwipe(dragPadding)
@@ -76,7 +65,7 @@ struct SimpleItem: View {
 	}
 
 	func animateSwipe(_ offset: CGFloat) {
-		if offset == -dragPadding {
+		if offset == -Style.dragPadding {
 			swipedItemId = item.id.uuidString
 		}
 
@@ -91,14 +80,10 @@ struct SimpleItem: View {
 				item.deleteAct()
 			}
 		} label: {
-			VStack(alignment: .center, spacing: 0) {
-				HStack(alignment: .center, spacing: 0) {
-					Image(systemName: "trash")
-						.resizable()
-						.frame(width: 28, height: 28)
-						.foregroundColor(.red)
-				}
-			}
+			Image(systemName: "trash")
+				.resizable()
+				.frame(width: 28, height: 28, alignment: .center)
+				.foregroundColor(.red)
 		}
 		.frame(width: 50)
 	}
